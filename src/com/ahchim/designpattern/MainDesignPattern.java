@@ -133,12 +133,5 @@ public class MainDesignPattern {
 			});
 		}
 		
-		ArrayList<String> s = new ArrayList<>(Arrays.asList("2 apples, 12 oranges".split("\\D")));
-		s.removeAll(Collections.singleton(""));
-
-		for(String ss : s){
-			System.out.println(ss);
-		}
-		
 	}
 }
