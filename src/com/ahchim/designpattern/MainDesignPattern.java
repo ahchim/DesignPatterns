@@ -89,7 +89,7 @@ public class MainDesignPattern {
 		// 전략을 컨텍스트에 넘겨서 사용한다
 		context.useStrategy(strategy);
 		
-		// 7. 전략 CallBack 패턴을 사용합니다.
+		// 8. 전략 CallBack 패턴을 사용합니다.
 		// 전략패턴과 동일한데 전략자체를 클라이언트에서 익명객체로 생성한다.
 		Strategy strategy2 = null;
 		Soldier context2 = new Soldier();
@@ -130,9 +130,9 @@ public class MainDesignPattern {
 			});
 		}
 		
-		// 8. 옵저버 사용하기
-		// 8.1 옵저버를 사용하기 위해서는 서버가 먼저 생성되어야 한다.
-		// 옵저버는 서버에서 옵저버들에게 공지때리기 위해 만듬
+		// 9. 옵저버 사용하기
+		// 9.1 옵저버를 사용하기 위해서는 서버가 먼저 생성되어야 한다.
+		// 옵저버는 서버에서 옵저버를 상속받은 객체들에게 공지때리기 위해 만듬
 		KakaoTalkServer server = new KakaoTalkServer();
 		
 		Student leeahchim = new Student(server, "이아침");
