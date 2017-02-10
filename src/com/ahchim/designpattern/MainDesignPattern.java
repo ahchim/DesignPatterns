@@ -1,14 +1,11 @@
 package com.ahchim.designpattern;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Set;
-
 import com.ahchim.designpattern.factorymethod.FactoryMethod;
 import com.ahchim.designpattern.factorymethod.Packed;
 import com.ahchim.designpattern.factorymethod.Product;
 import com.ahchim.designpattern.factorymethod.TVFactory;
+import com.ahchim.designpattern.observer.KakaoTalkServer;
+import com.ahchim.designpattern.observer.Student;
 import com.ahchim.designpattern.proxy.Bbs;
 import com.ahchim.designpattern.proxy.Proxy;
 import com.ahchim.designpattern.singleton.Multiton;
@@ -133,5 +130,18 @@ public class MainDesignPattern {
 			});
 		}
 		
+		// 8. 옵저버 사용하기
+		// 8.1 옵저버를 사용하기 위해서는 서버가 먼저 생성되어야 한다.
+		// 옵저버는 서버에서 옵저버들에게 공지때리기 위해 만듬
+		KakaoTalkServer server = new KakaoTalkServer();
+		
+		Student leeahchim = new Student(server, "이아침");
+		// 밑에처럼 쓰는 게 아니라 생성자로 server를 넘겨주면 연결될거다.
+		//server.addObserver(leeahchim);
+		
+		Student parksaesom = new Student(server, "박새솜");
+		Student leeyounkyu = new Student(server, "이윤규");
+		
+		parksaesom.addMessage("공지입니다. 10시까지 튀어오세요");
 	}
 }
